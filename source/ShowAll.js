@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
 import { Icon } from 'react-native-elements';
@@ -11,7 +11,7 @@ export default class ShowAll extends React.Component {
     console.log(data.length);
 
     return (
-      <View>
+      <ScrollView>
         <View
           style={{
             height: 60,
@@ -78,11 +78,11 @@ export default class ShowAll extends React.Component {
                   {hourDiff} Hours {minDiff} minutes
                 </Text>
               )}
-              {!item.time.leaveTime && <View style={{flex: 3}} />}
+              {!item.time.leaveTime && <View style={{ flex: 3 }} />}
             </View>
           );
         })}
-      </View>
+      </ScrollView>
     );
   }
 }
